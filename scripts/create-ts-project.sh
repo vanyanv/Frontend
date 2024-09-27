@@ -16,6 +16,9 @@ cd "$1" || exit
 # Create a TypeScript file with the same name as the directory
 touch "$1.ts"
 
+# Create a TypeScript Test file with the same name as the directory
+touch "$1.test.ts"
+
 # Create a README.md file
 cat <<EOL > README.md
 # $1
@@ -28,4 +31,4 @@ This is the TypeScript file for the project \`$1\`.
 
 EOL
 
-echo "Project '$1' has been created with '$1.ts' and 'README.md'."
+echo "Project '$1' has been created with '$1.ts', $1.test.ts' and README.md'."
