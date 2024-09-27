@@ -1,50 +1,26 @@
-# React + TypeScript + Vite
+# The Great Frontend: Custom Tests
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to **The Great Frontend: Custom Tests** project! This repository contains a collection of frontend questions sourced from [The Great Frontend](https://www.thegreatfrontend.com/), each paired with a unique test designed to evaluate and enhance your skills in various frontend technologies and concepts.
 
-Currently, two official plugins are available:
+## Project Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+In this project, we take questions from **The Great Frontend** and create tailored tests for each. These tests are meant to provide hands-on practice and challenge frontend developers of all levels. Each test is built around key concepts that are essential for mastering frontend development, such as:
 
-## Expanding the ESLint configuration
+- HTML, CSS, and JavaScript fundamentals
+- React, Vue, and other frameworks
+- Accessibility
+- Responsive design
+- Performance optimization
+- Advanced concepts like state management and hooks
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## How It Works
 
-- Configure the top-level `parserOptions` property like this:
+For each question from **The Great Frontend**, we've created a corresponding test file. Each test includes:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- **Question Overview**: A description of the frontend question or challenge.
+- **Test Instructions**: Steps and guidelines to complete the task.
+- **Evaluation Criteria**: Key points that your solution will be evaluated on.
+- **Sample Solutions** (optional): Example solutions for reference.
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+You can clone the repository and attempt each test in the order of your choice. 
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
