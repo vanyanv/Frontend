@@ -8,7 +8,7 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "createNew": "sh scripts/create-ts-project.sh",
+    "create": "sh scripts/create-ts-project.sh",
     "test": "jest"
   },
   "dependencies": {
