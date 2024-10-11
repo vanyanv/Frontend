@@ -9,6 +9,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "create": "sh scripts/create-ts-project.sh",
+    "createFE": "sh scripts/create-fe-project.sh",
     "test": "jest"
   },
   "dependencies": {
