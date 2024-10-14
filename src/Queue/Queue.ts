@@ -1,6 +1,7 @@
 export default class Queue<T> {
+  queue: T[];
   constructor() {
-    throw 'Not implemented!';
+    this.queue = [];
   }
 
   /**
@@ -9,7 +10,7 @@ export default class Queue<T> {
    * @return {number} The new length of the queue.
    */
   enqueue(item: T): number {
-    throw 'Not implemented!';
+    return this.queue.push(item);
   }
 
   /**
@@ -17,7 +18,8 @@ export default class Queue<T> {
    * @return {T | undefined} The item at the front of the queue if it is not empty, `undefined` otherwise.
    */
   dequeue(): T | undefined {
-    throw 'Not implemented!';
+    if (this.queue.length === 0) return undefined;
+    return this.queue.pop();
   }
 
   /**
@@ -25,7 +27,8 @@ export default class Queue<T> {
    * @return {boolean} `true` if the queue has no items, `false` otherwise.
    */
   isEmpty(): boolean {
-    throw 'Not implemented!';
+    if (this.queue.length === 0) return true;
+    return false;
   }
 
   /**
@@ -33,7 +36,9 @@ export default class Queue<T> {
    * @return {T | undefined} The item at the front of the queue if it is not empty, `undefined` otherwise.
    */
   front(): T | undefined {
-    throw 'Not implemented!';
+    const length = this.queue.length;
+    if (length === 0) return undefined;
+    return this.queue[length - 1];
   }
 
   /**
@@ -41,7 +46,9 @@ export default class Queue<T> {
    * @return {T | undefined} The item at the back of the queue if it is not empty, `undefined` otherwise.
    */
   back(): T | undefined {
-    throw 'Not implemented!';
+    const length = this.queue.length;
+    if (length === 0) return undefined;
+    return this.queue[0];
   }
 
   /**
@@ -49,6 +56,7 @@ export default class Queue<T> {
    * @return {number} The number of items in the queue.
    */
   length(): number {
-    throw 'Not implemented!';
+    const length = this.queue.length;
+    return length;
   }
 }
