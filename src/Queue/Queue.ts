@@ -10,7 +10,7 @@ export default class Queue<T> {
    * @return {number} The new length of the queue.
    */
   enqueue(item: T): number {
-    return this.queue.push(item);
+    return this.queue.unshift(item);
   }
 
   /**
