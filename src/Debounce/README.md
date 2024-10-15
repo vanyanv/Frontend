@@ -1,9 +1,5 @@
 # Debounce
 
-**Author**  
-Yangshun Tay  
-Ex-Meta Staff Engineer
-
 **Languages**
 
 - JS

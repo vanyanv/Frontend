@@ -14,7 +14,7 @@ describe('debounce', () => {
     }, 10);
 
     expect(i).toBe(0);
-    increment();
+    increment(undefined);
     expect(i).toBe(0);
 
     setTimeout(() => {
