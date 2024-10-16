@@ -1,3 +1,8 @@
 export default function throttle(func: Function, wait: number): Function {
-  throw 'Not implemented!';
+  const throttleId;
+
+  return function () {
+
+    
+  }
 }
