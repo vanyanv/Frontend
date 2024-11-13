@@ -5,21 +5,28 @@ type NumberProcessor = {
   calculateAverage: (numbers: number[]) => number;
 };
 
-const data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-
 const numberProcessor: NumberProcessor = {
   getEvenNumbers: (numbers: number[]): number[] => {
+    if (numbers.length === 0) return [];
     return numbers.filter((number) => number % 2 === 0);
   },
 
   sumGreaterThanFive: (numbers: number[]): number => {
+    if (numbers.length === 0) return 0;
     // Your implementation here
-    return 0;
+    return numbers.reduce((acc, curr) => {
+      if (curr > 5) {
+        return acc + curr;
+      }
+      return acc;
+    }, 0);
   },
 
   calculateAverage: (numbers: number[]): number => {
+    if (numbers.length === 0) return 0;
     // Your implementation here
-    return 0;
+    const sum = numbers.reduce((acc, curr) => acc + curr);
+    return sum / numbers.length;
   },
 };
 
