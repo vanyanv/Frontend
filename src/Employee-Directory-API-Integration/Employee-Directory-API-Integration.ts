@@ -1,7 +1,4 @@
-// =====================================
-// Problem 1: Employee Directory API Integration
-// =====================================
-
+import { mockApi } from './mockAPI';
 interface Employee {
   id: number;
   name: string;
@@ -10,7 +7,7 @@ interface Employee {
   lastReview?: string;
   team?: string;
 }
-
+// Types
 interface RawEmployee {
   id: number;
   name: string;
@@ -28,20 +25,20 @@ interface TeamData {
   teamName: string;
   members: number[];
 }
-
 async function getEmployeeDirectory(): Promise<Employee[]> {
   try {
     // TODO: Implement API calls and data combination
     // Hint: Use Promise.all for concurrent requests
 
-    // Mock API endpoints - replace with actual fetch calls in real implementation
-    const employeesPromise = fetch('/api/employees').then((res) => res.json());
-    const performancePromise = fetch('/api/performance').then((res) =>
-      res.json()
-    );
-    const teamsPromise = fetch('/api/teams').then((res) => res.json());
+    const [employeesRes, performaceRes, teamsRes] = await Promise.all([
+      mockApi.fetchEmployees(),
+      mockApi.fetchPerformance(),
+      mockApi.fetchTeams(),
+    ]);
 
-    // Your code here
+    console.log(employeesRes.data, performaceRes.data, teamsRes.data);
+
+    //create employee directory
 
     return [];
   } catch (error) {
@@ -49,3 +46,5 @@ async function getEmployeeDirectory(): Promise<Employee[]> {
     throw error;
   }
 }
+
+getEmployeeDirectory();
