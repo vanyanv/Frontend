@@ -1,44 +1,60 @@
-import { mockApi } from './mockAPI';
 interface Employee {
-  id: number;
+  id: string;
   name: string;
   department: string;
   rating?: number;
-  lastReview?: string;
+  lastReview?: Date;
   team?: string;
 }
 // Types
 interface RawEmployee {
-  id: number;
+  id: string;
   name: string;
   department: string;
 }
 
 interface PerformanceData {
-  employeeId: number;
+  employeeId: string;
   rating: number;
   lastReview: string;
 }
 
-interface TeamData {
-  id: number;
-  teamName: string;
-  members: number[];
-}
 async function getEmployeeDirectory(): Promise<Employee[]> {
   try {
     // TODO: Implement API calls and data combination
     // Hint: Use Promise.all for concurrent requests
 
-    const [employeesRes, performaceRes, teamsRes] = await Promise.all([
-      mockApi.fetchEmployees(),
-      mockApi.fetchPerformance(),
-      mockApi.fetchTeams(),
+    const [employeesRes, performanceRes] = await Promise.all([
+      fetch('https://6735506c5995834c8a926ae7.mockapi.io/Employee'),
+      fetch('https://6735506c5995834c8a926ae7.mockapi.io/performance'),
     ]);
 
-    console.log(employeesRes.data, performaceRes.data, teamsRes.data);
+    if (!employeesRes.ok || !performanceRes.ok) {
+      throw new Error('Failed to fetch data');
+    }
 
+    const employeesData: RawEmployee[] = await employeesRes.json();
+    const performanceData = await performanceRes.json();
     //create employee directory
+
+    const directory = employeesData.map((employee) => {
+      const employeePerformance = performanceData.find(
+        (p: PerformanceData) => p.employeeId === employee.id
+      );
+
+      return {
+        ...employee,
+        rating: employeePerformance?.rating,
+        lastReview: new Date(employeePerformance?.lastReview),
+      };
+    });
+
+    const sortedByDirectory = directory.sort((a, b) =>
+      a.department.localeCompare(b.department)
+    );
+    sortedByDirectory.sort((a, b) => a.name.localeCompare(b.name));
+    console.log('directory', sortedByDirectory);
+    return directory;
 
     return [];
   } catch (error) {
