@@ -55,8 +55,6 @@ async function getEmployeeDirectory(): Promise<Employee[]> {
     sortedByDirectory.sort((a, b) => a.name.localeCompare(b.name));
     console.log('directory', sortedByDirectory);
     return directory;
-
-    return [];
   } catch (error) {
     console.error('Error fetching employee directory:', error);
     throw error;
