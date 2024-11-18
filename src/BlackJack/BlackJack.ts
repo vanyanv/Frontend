@@ -1,14 +1,22 @@
 type players = string[];
 
+type DictionaryTypes = {
+  [key: string]: number;
+};
+
 function findWinner(player: players, dealer: players) {
-  const dictionary = {
+  const dictionary: DictionaryTypes = {
     J: 10,
     Q: 10,
     K: 10,
   };
   function findScore(array: players) {
     const score = array.reduce((score, curr) => {
-      return score + parseInt(curr);
+      if (dictionary[curr]) {
+        return score + dictionary[curr];
+      } else {
+        return score + parseInt(curr);
+      }
     }, 0);
     return score;
   }
@@ -28,7 +36,7 @@ function findWinner(player: players, dealer: players) {
   }
 }
 
-const players = ['10', '12'];
-const dealers = ['10', '12'];
+const players = ['10', '1', 'J'];
+const dealers = ['10', '6'];
 
 findWinner(players, dealers);
