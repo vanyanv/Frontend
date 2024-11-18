@@ -1,7 +1,11 @@
 type players = string[];
 
 function findWinner(player: players, dealer: players) {
-  console.log('running');
+  const dictionary = {
+    J: 10,
+    Q: 10,
+    K: 10,
+  };
   function findScore(array: players) {
     const score = array.reduce((score, curr) => {
       return score + parseInt(curr);
@@ -12,8 +16,11 @@ function findWinner(player: players, dealer: players) {
   const playerScore = findScore(player);
   const dealerScore = findScore(dealer);
 
+  if (playerScore > 21) return [dealer, dealerScore];
+  if (dealerScore > 21 && playerScore <= 21) return [player, playerScore];
+
   if (playerScore > dealerScore) {
-    console.log('Player',[player, playerScore]);
+    console.log('Player', [player, playerScore]);
     return [player, playerScore];
   } else {
     console.log('Dealer', [dealer, dealerScore]);
@@ -21,7 +28,7 @@ function findWinner(player: players, dealer: players) {
   }
 }
 
-const players = ['10', '6'];
-const dealers = ['10', '5'];
+const players = ['10', '12'];
+const dealers = ['10', '12'];
 
 findWinner(players, dealers);
