@@ -12,10 +12,16 @@ function findWinner(player: players, dealer: players) {
   const playerScore = findScore(player);
   const dealerScore = findScore(dealer);
 
-  console.log(playerScore, dealerScore);
+  if (playerScore > dealerScore) {
+    console.log('Player',[player, playerScore]);
+    return [player, playerScore];
+  } else {
+    console.log('Dealer', [dealer, dealerScore]);
+    return [dealer, dealerScore];
+  }
 }
 
-const players = ['10', '5'];
+const players = ['10', '6'];
 const dealers = ['10', '5'];
 
 findWinner(players, dealers);
