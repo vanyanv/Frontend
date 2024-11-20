@@ -12,42 +12,32 @@ function findWinner(player: players, dealer: players) {
     A: 11,
   };
 
-  function findA(array: players) {
-    return array.filter((card) => card === 'A');
-  }
-
-  const playerA = findA(player);
-  const dealerA = findA(dealer);
-
   function findScore(array: players) {
-    const score = array.reduce((score, curr) => {
-      if (curr === 'A') return score + 0;
+    const aces = array.filter((card) => card === 'A').length;
+    let score = array.reduce((score, curr) => {
+      if (curr === 'A') return score;
       if (dictionary[curr]) {
         return score + dictionary[curr];
       } else {
         return score + parseInt(curr);
       }
     }, 0);
-    return score;
-  }
 
-  function Alogic(array: string[], score: number) {
-    for (let i = 0; i < array.length; i++) {
-      const current = array[i];
-      if (score + dictionary[current] <= 21) {
-        score += dictionary[current];
+    // Add aces optimally
+    for (let i = 0; i < aces; i++) {
+      // If adding 11 would bust, add 1 instead
+      if (score + 11 <= 21) {
+        score += 11;
       } else {
         score += 1;
       }
     }
+
     return score;
   }
 
-  let playerScore = findScore(player);
-  let dealerScore = findScore(dealer);
-
-  playerScore = Alogic(playerA, playerScore);
-  dealerScore = Alogic(dealerA, dealerScore);
+  const playerScore = findScore(player);
+  const dealerScore = findScore(dealer);
 
   console.log('playerScore', playerScore);
   console.log('dealerScore', dealerScore);
@@ -64,4 +54,4 @@ function findWinner(player: players, dealer: players) {
   }
 }
 
-export default findWinner
+export default findWinner;
