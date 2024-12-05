@@ -1,3 +1,5 @@
+
+//function way
 function sum(n: number): number {
   //base case
   if (n == 0) return 0;
