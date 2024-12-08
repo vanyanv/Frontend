@@ -3,7 +3,7 @@ export function reverseArray<T>(array: T[], i: number): T[] {
   //if the given array is empty return an empty array
   if (array.length < 1) return [];
   //base case
-  if (i > Math.floor(array.length / 2)) return array;
+  if (i >= Math.floor(array.length / 2)) return array;
 
   //swapping elements in place
   [array[i], array[array.length - 1 - i]] = [
@@ -20,7 +20,7 @@ export function reverseArrayR<T>(array: T[]): T[] {
   if (array.length < 1) return [];
 
   //go thru half the array
-  for (let i = 0; i < Math.floor((array.length - 1) / 2); i++) {
+  for (let i = 0; i <= Math.floor((array.length - 1) / 2); i++) {
     //swap the elements in place
     [array[i], array[array.length - 1 - i]] = [
       array[array.length - 1 - i],
