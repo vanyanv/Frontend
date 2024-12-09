@@ -11,7 +11,7 @@ export function palindrome(string: string): boolean {
   if (string.length < 2) return true;
 
   //go thru the string and compare
-  for (let i = 0; i < Math.floor(string.length / 2); ) {
+  for (let i = 0; i < Math.floor(string.length / 2); i++) {
     if (string[i] !== string[string.length - 1 - i]) {
       return false;
     }
@@ -19,3 +19,6 @@ export function palindrome(string: string): boolean {
 
   return true;
 }
+
+
+console.log(palindrome("radar"))
