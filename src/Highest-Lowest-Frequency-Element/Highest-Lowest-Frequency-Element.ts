@@ -16,19 +16,17 @@ export function frequency<T extends number>(array: T[]): number[] {
 
   // Find most and least frequent numbers
   for (const [num, freq] of cache) {
-      if (freq > maxFreq) {
-          maxFreq = freq;
-          mostFrequent = num;
-      }
-      if (freq < minFreq) {
-          minFreq = freq;
-          leastFrequent = num;
-      }
+    if (freq > maxFreq) {
+      maxFreq = freq;
+      mostFrequent = num;
+    }
+    if (freq < minFreq) {
+      minFreq = freq;
+      leastFrequent = num;
+    }
   }
 
   return [mostFrequent, leastFrequent];
-  
-
 }
 
 console.log(frequency([10, 5, 10, 15, 10, 5]));
