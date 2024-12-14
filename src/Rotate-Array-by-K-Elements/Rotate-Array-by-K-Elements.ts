@@ -3,12 +3,13 @@ export function rotateArrayByK(
   k: number,
   direction: string
 ): number[] {
+  if (array.length < 2) return array;
   const storage =
-    direction == 'right'
+    direction === 'right'
       ? array.splice(array.length - k, k)
       : array.splice(0, k);
 
-  if (direction == 'right') {
+  if (direction === 'right') {
     return [...storage, ...array];
   } else {
     return [...array, ...storage];
