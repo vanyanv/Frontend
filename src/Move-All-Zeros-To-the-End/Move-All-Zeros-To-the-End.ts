@@ -16,8 +16,8 @@ function moveAllZerosToEnd(array: number[]) {
   return newArray;
 }
 
-// console.log(moveAllZerosToEnd([1, 0, 2, 3, 0, 4, 0, 1]));
-// console.log(moveAllZerosToEnd([1, 2, 0, 1, 0, 4, 0]));
+console.log(moveAllZerosToEnd([1, 0, 2, 3, 0, 4, 0, 1]));
+console.log(moveAllZerosToEnd([1, 2, 0, 1, 0, 4, 0]));
 
 //time complexity
 // O(3N) -> have 3 for loops
@@ -49,3 +49,31 @@ function moveAllZerosToEnd2(array: number[]): number[] {
 
 console.log(moveAllZerosToEnd2([1, 0, 2, 3, 0, 4, 0, 1]));
 console.log(moveAllZerosToEnd2([1, 2, 0, 1, 0, 4, 0]));
+
+function moveAllZerosToEndOptimally(array: number[]): number[] {
+  //find the first zero
+  let j = -1;
+
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] === 0) {
+      j = i;
+      break;
+    }
+  }
+
+  //because we found no zeros
+  if (j === -1) return array;
+  //now we use the pointer to swap elements
+
+  for (let i = j + 1; i < array.length; i++) {
+    if (array[i] !== 0) {
+      [array[j], array[i]] = [array[i], array[j]];
+      j++;
+    }
+  }
+
+  return array;
+}
+
+console.log(moveAllZerosToEndOptimally([1, 0, 2, 3, 0, 4, 0, 1]));
+console.log(moveAllZerosToEndOptimally([1, 2, 0, 1, 0, 4, 0]));
