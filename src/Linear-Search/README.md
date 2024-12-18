@@ -1,19 +1,50 @@
-Linear Search in C
+# Linear Search
 
+## Problem Description
+Given an array of integers and a target number, implement linear search to find if the target number exists in the array. If present, return its index; otherwise, return -1.
 
-144
+## Examples
 
-7
-Problem Statement: Given an array, and an element num the task is to find if num is present in the given array or not. If present print the index of the element or print -1.
+### Example 1
+```
+Input: 
+Array = [1, 2, 3, 4, 5]
+Target = 3
 
-Examples:
-
-Example 1:
-Input: arr[]= 1 2 3 4 5, num = 3
 Output: 2
-Explanation: 3 is present in the 2nd index
+Explanation: Element 3 is found at index 2
+```
 
-Example 2:
-Input: arr[]= 5 4 3 2 1, num = 5
+### Example 2
+```
+Input:
+Array = [5, 4, 3, 2, 1]
+Target = 5
+
 Output: 0
-Explanation: 5 is present in the 0th index
+Explanation: Element 5 is found at index 0
+```
+
+## Test Cases
+```
+Test Case 1:
+Array: [1, 2, 3, 4, 5]
+Target: 6
+Expected Output: -1
+
+Test Case 2:
+Array: [10, 20, 30, 40, 50]
+Target: 30
+Expected Output: 2
+
+Test Case 3:
+Array: [1]
+Target: 1
+Expected Output: 0
+```
+
+## Constraints
+- 1 ≤ Array Length ≤ 10^5
+- -10^9 ≤ Array Elements ≤ 10^9
+- Time Complexity: O(n)
+- Space Complexity: O(1)
