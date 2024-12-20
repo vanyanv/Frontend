@@ -68,6 +68,8 @@ function unionOfSortedArraysOptimal(
   return unionArray;
 }
 
+// O(n + m) + O(n) + O(m) -> O(3n) time complexity because we are running 3 while loops and we have to go thru both arrays
+// O(1) if the return arrays is not considered but O(n+m) if it is
 console.log(unionOfSortedArraysOptimal([1, 2, 3, 4, 5], [2, 3, 4, 4, 5], 5, 5)); // [1, 2, 3, 4, 5]
 console.log(unionOfSortedArraysOptimal([1, 1, 1, 2, 3], [2, 3, 4, 5, 6], 5, 5)); // [1, 2, 3, 4, 5, 6]
 console.log(unionOfSortedArraysOptimal([1, 2], [3, 4], 2, 2)); // [1, 2, 3, 4]
