@@ -41,6 +41,8 @@ export function findMissingNumberOptimal(array: number[], n: number): number {
   return sum2 - sum1;
 }
 
+//O(n + m)  because we have to loop thru first the array then we have to add all the numbers from 1 to N
+//O(1) because we are not using any extra space
 console.log(findMissingNumberOptimal([1, 2, 3, 5], 5));
 console.log(findMissingNumberOptimal([1, 2, 4, 5], 5)); // Should return 3
 console.log(findMissingNumberOptimal([2, 3, 4, 5], 5)); // Should return 1
