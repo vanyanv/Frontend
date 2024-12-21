@@ -1,30 +1,20 @@
 export function longestSubarray(array: number[], k: number): number {
-  let max = 0;
+  let maxLength = 0;
 
-  let current = 0;
-  let i = 0;
-  let j = 0;
-  let sum = 0;
-
-  while (i < array.length) {
-    if (sum < k) {
-      sum += array[j];
-      current += 1;
-      j++;
-    }
-
-    if (sum == k) {
-      if (current > max) {
-        max = current;
+  for (let start = 0; start < array.length; start++) {
+    let sum = 0;
+    let length = 0;
+    for (let end = start; end < array.length; end++) {
+      sum += array[end];
+      length++;
+      if (sum === k) {
+        maxLength = Math.max(maxLength, length);
       }
-      sum = 0;
-      current = 0;
-      i++;
-      j = i + 1;
+      if (sum > k) break;
     }
   }
 
-  return max;
+  return maxLength;
 }
 
 console.log(longestSubarray([2, 3, 5], 5));
