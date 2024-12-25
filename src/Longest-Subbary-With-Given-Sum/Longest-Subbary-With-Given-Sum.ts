@@ -23,3 +23,5 @@ console.log(longestSubarray([1, 2, 3, 4, 5], 9));
 console.log(longestSubarray([1, 2, 3, 4, 5], 15));
 console.log(longestSubarray([1, 2, 3, 4, 5], 5));
 console.log(longestSubarray([1, 2, 3, 4, 5], 1));
+
+export function longestSubarrayOptimal(array: number[], k: number): number {}
