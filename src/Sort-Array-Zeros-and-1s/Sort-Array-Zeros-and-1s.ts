@@ -32,3 +32,6 @@ console.log(sortArray([2, 0, 2, 1, 1, 0]));
 console.log(sortArray([2, 0, 1]));
 
 console.log(sortArray([0]));
+
+//time complexity -> O(n) + O(n)
+//space complexity -> O(1) no extra space is being used
