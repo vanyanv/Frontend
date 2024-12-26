@@ -43,7 +43,19 @@ export function findMajorityOptimal(array: number[], n: number): number {
     }
   }
 
-  return ele;
+  let eleCount = 0;
+
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] === ele) {
+      eleCount++;
+    }
+
+    if (eleCount > Math.floor(n / 2)) {
+      return ele;
+    }
+  }
+
+  return -1;
 }
 
 //using moors voting law algo
@@ -51,3 +63,6 @@ console.log('MOORS VOTING LAW ');
 console.log(findMajorityOptimal([2, 2, 1, 1, 1, 2, 2], 7));
 console.log(findMajorityOptimal([3, 2, 3], 3));
 console.log(findMajorityOptimal([4, 4, 2, 4, 3, 4, 4, 3, 2, 4], 10));
+
+//O(N + N)
+//O(1)
