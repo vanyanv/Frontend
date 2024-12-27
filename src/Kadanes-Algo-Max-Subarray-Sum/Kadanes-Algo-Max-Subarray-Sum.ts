@@ -27,24 +27,32 @@ export function maxSubarray(array: number[]): number {
 //Space Complexity O(2N) -> we are using extra space to store the sub array
 
 export function maxSubarrayOptimal(array: number[]): number {
+  if (array.length === 0) return 0;
   let sum = 0;
   let maximum = array[0];
-  let sumArray = [];
+  let start = 0;
+  let ansStart = 0;
+  let ansEnd = 0;
 
   for (let i = 0; i < array.length; i++) {
+    if (sum == 0) start = i;
     sum += array[i];
-    sumArray.push(array[i]);
     if (sum > maximum) {
       maximum = sum;
+      ansStart = start;
+      ansEnd = i;
     }
 
     if (sum < 0) {
       sum = 0;
-      sumArray = [];
     }
   }
 
-  console.log(sumArray);
+  console.log('The subarray is: [');
+  for (let i = ansStart; i <= ansEnd; i++) {
+    console.log(array[i] + ' ');
+  }
+  console.log(']');
   return maximum;
 }
 
