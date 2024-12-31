@@ -1,26 +1,107 @@
-# The Great Frontend: Custom Tests
+# Technical Interview Problems Collection
 
-Welcome to **The Great Frontend: Custom Tests** project! This repository contains a collection of frontend questions sourced from [The Great Frontend](https://www.thegreatfrontend.com/), each paired with a unique test designed to evaluate and enhance your skills in various frontend technologies and concepts.
+Welcome to the Technical Interview Problems Collection! This repository is designed to help developers prepare for technical interviews with a comprehensive set of coding challenges, complete with test cases and detailed explanations.
 
-## Project Overview
+## Repository Structure
 
-In this project, we take questions from **The Great Frontend** and create tailored tests for each. These tests are meant to provide hands-on practice and challenge frontend developers of all levels. Each test is built around key concepts that are essential for mastering frontend development, such as:
+Each problem in this collection includes:
 
-- HTML, CSS, and JavaScript fundamentals
-- React, Vue, and other frameworks
-- Accessibility
-- Responsive design
-- Performance optimization
-- Advanced concepts like state management and hooks
+- **README.md**: Detailed problem description and requirements
+- **Examples**: Sample inputs and expected outputs
+- **Test Cases**: Unit tests to validate your solution
+- **Solutions**: Reference implementations (in separate branch)
 
-## How It Works
+## Problem Categories
 
-For each question from **The Great Frontend**, we've created a corresponding test file. Each test includes:
+Our problems cover various programming concepts:
 
-- **Question Overview**: A description of the frontend question or challenge.
-- **Test Instructions**: Steps and guidelines to complete the task.
-- **Evaluation Criteria**: Key points that your solution will be evaluated on.
-- **Sample Solutions** (optional): Example solutions for reference.
+- Data Structures & Algorithms
+- System Design
+- Frontend Implementation
+- Object-Oriented Design
+- Database Queries
+- API Design
 
-You can clone the repository and attempt each test in the order of your choice. 
+## How to Use
 
+1. Clone the repository
+2. Navigate to any problem directory
+3. Read the problem's README.md
+4. Write your solution
+5. Run provided tests to verify
+
+## Contributing
+
+Feel free to contribute by:
+
+- Adding new problems
+- Improving test cases
+- Enhancing documentation
+- Fixing bugs
+
+## Getting Started
+
+```bash
+git clone <repository-url>
+cd technical-interview-problems
+```
+
+# Project Structure
+
+```
+/src
+├── 2-Sum/
+├── BlackJack/
+├── Check-if-Array-is-Sorted/
+├── Count-By/
+├── Count-Frequency/
+├── Cycle/
+├── Debounce/
+├── E-commerce-Data-Transformation/
+├── Employee-Directory-API-Integration/
+├── Factorial-of-N-Numbers/
+├── Fibonacci/
+├── Find-Next-Lexicographically-Greater-Permutation/
+├── Find-The-Consecutive-Ones/
+├── Find-The-Majority-Element/
+├── Find-The-Missing-Number/
+├── Find-The-Number-Once/
+├── Highest-Lowest-Frequency-Element/
+├── Insertion-Sort/
+├── Kadanes-Algo-Max-Subarray-Sum/
+├── Largest-Element-In-Array/
+├── Leader-In-Array/
+├── Left-Roate-Array-By-One/
+├── Linear-Search/
+├── Longest-Consecutive-Sequence/
+├── Longest-Subbary-With-Given-Sum/
+├── MakeCouter/
+├── Mean/
+├── Min-By/
+├── Move-All-Zeros-To-the-End/
+├── Number-Array-Processor/
+├── Palindrome/
+├── Performace-Dashboard-Component/
+├── Print-1-to-N/
+├── Print-N-Times/
+├── Print-N-to-1/
+├── Queue/
+├── Rearrange-Array-Elements-by-Sign/
+├── Remove-Duplicates/
+├── Reverse-Array/
+├── Rotate-Array-by-K-Elements/
+├── Second-Smallest-Largest/
+├── Selection-Sort/
+├── Set-Matrix-Zero/
+├── Sort-Array-Zeros-and-1s/
+├── Stack/
+├── Stock-Buy-Sell/
+├── Student-Score-Analyzer/
+├── Sum-of-First-N-Natural-Numbers/
+├── Task-Managment-API-Integration/
+├── Testimonial-Card/
+├── Throttle/
+├── Type-Utilities-2/
+├── TypeUtilities/
+├── Union-Sorted-Arrays/
+```
