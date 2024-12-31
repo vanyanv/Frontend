@@ -25,3 +25,31 @@ console.log(longestConescutiveSeq([1, 2, 3, 4, 5]));
 
 //Time Complextiy -> o(nlogN) + O(N^2)
 //Space Complexity -> o(1)
+
+export function longestConescutiveSeqBetter(array: number[]): number {
+  let longest = 1;
+  let countCurr = 0;
+  let lastSmallest = -Infinity;
+
+  array.sort((a, b) => a - b);
+
+  for (let i = 0; i < array.length; i++) {
+    const current = array[i];
+
+    if (current - 1 === lastSmallest) {
+      countCurr++;
+      lastSmallest = current;
+    } else if (current - 1 !== lastSmallest) {
+      lastSmallest = current;
+      countCurr = 1;
+    }
+
+    longest = Math.max(longest, countCurr);
+  }
+
+  return longest;
+}
+
+console.log(longestConescutiveSeqBetter([100, 200, 1, 3, 2, 4]));
+console.log(longestConescutiveSeqBetter([3, 8, 5, 7, 6]));
+console.log(longestConescutiveSeqBetter([1, 2, 3, 4, 5]));
