@@ -53,3 +53,37 @@ export function longestConescutiveSeqBetter(array: number[]): number {
 console.log(longestConescutiveSeqBetter([100, 200, 1, 3, 2, 4]));
 console.log(longestConescutiveSeqBetter([3, 8, 5, 7, 6]));
 console.log(longestConescutiveSeqBetter([1, 2, 3, 4, 5]));
+
+export function longestConescutiveSeqOptimal(array: number[]): number {
+  const hashMap = new Set<number>();
+  let longest = 1;
+
+  for (let i = 0; i < array.length; i++) {
+    hashMap.add(array[i]);
+  }
+
+  for (const key of hashMap) {
+    const num = key;
+
+    if (!hashMap.has(num - 1)) {
+      let count = 1;
+      let x: number = key;
+
+      while (hashMap.has(x + 1)) {
+        x = x + 1;
+        count = count + 1;
+      }
+
+      longest = Math.max(longest, count);
+    }
+  }
+
+  return longest;
+}
+
+console.log('Optimal Solution');
+console.log(longestConescutiveSeqOptimal([100, 200, 1, 3, 2, 4]));
+console.log(longestConescutiveSeqOptimal([3, 8, 5, 7, 6]));
+console.log(longestConescutiveSeqOptimal([1, 2, 3, 4, 5]));
+
+//Time Complexity O
