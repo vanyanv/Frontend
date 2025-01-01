@@ -59,5 +59,55 @@ console.log(
   ])
 );
 
-//Time Complexity -> O(n * m)
+//Time Complexity -> O(n^3)
 //Space Complexity -> O(1)
+
+function setMatrixBetter(array: number[][]): number[][] {
+  const columns = [];
+  const rows = [];
+
+  for (let i = 0; i < array.length; i++) {
+    const currentArray = array[i];
+
+    for (let j = 0; j < currentArray.length; j++) {
+      if (currentArray[j] === 0) {
+        columns[j] = -1;
+        rows[i] = -1;
+      }
+    }
+  }
+
+  for (let i = 0; i < array.length; i++) {
+    const currentArray = array[i];
+
+    for (let j = 0; j < currentArray.length; j++) {
+      if (columns[j] === -1) {
+        currentArray[j] = 0;
+      }
+
+      if (rows[i] === -1) {
+        currentArray[j] = 0;
+      }
+    }
+  }
+  return array;
+}
+
+console.log('Better Solution');
+console.log(
+  setMatrixBetter([
+    [1, 1, 1],
+    [1, 0, 1],
+    [1, 1, 1],
+  ])
+);
+console.log(
+  setMatrixBetter([
+    [0, 1, 2, 0],
+    [3, 4, 5, 2],
+    [1, 3, 1, 5],
+  ])
+);
+
+//Time Complexity -> O(n^2)
+//Space COmplexity -> O(1)
