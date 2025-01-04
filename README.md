@@ -46,6 +46,7 @@ git clone <repository-url>
 cd technical-interview-problems
 ```
 
+
 # Project Structure
 
 ```
@@ -55,6 +56,7 @@ cd technical-interview-problems
 ├── Check-if-Array-is-Sorted/
 ├── Count-By/
 ├── Count-Frequency/
+├── Count-Subbarrays-With-Sum/
 ├── Cycle/
 ├── Debounce/
 ├── E-commerce-Data-Transformation/
@@ -75,12 +77,14 @@ cd technical-interview-problems
 ├── Linear-Search/
 ├── Longest-Consecutive-Sequence/
 ├── Longest-Subbary-With-Given-Sum/
+├── Majority-Element-N-over-3/
 ├── MakeCouter/
 ├── Mean/
 ├── Min-By/
 ├── Move-All-Zeros-To-the-End/
 ├── Number-Array-Processor/
 ├── Palindrome/
+├── Pascals-Triangle/
 ├── Performace-Dashboard-Component/
 ├── Print-1-to-N/
 ├── Print-N-Times/
@@ -90,10 +94,12 @@ cd technical-interview-problems
 ├── Remove-Duplicates/
 ├── Reverse-Array/
 ├── Rotate-Array-by-K-Elements/
+├── Rotate-Image-by-90-Degree/
 ├── Second-Smallest-Largest/
 ├── Selection-Sort/
 ├── Set-Matrix-Zero/
 ├── Sort-Array-Zeros-and-1s/
+├── Spiral-Traversal-of-Matrix/
 ├── Stack/
 ├── Stock-Buy-Sell/
 ├── Student-Score-Analyzer/
