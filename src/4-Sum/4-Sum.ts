@@ -39,3 +39,6 @@ export function fourSum(array: number[], target: number): number[][] {
 console.log('brute force');
 console.log(fourSum([1, 0, -1, 0, -2, 2], 0));
 console.log(fourSum([4, 3, 3, 4, 4, 2, 1, 2, 1, 1], 9));
+
+//Time Complexity O(n^2) + Nlog(n)
+//Space Complexity O(N) + O(n)
