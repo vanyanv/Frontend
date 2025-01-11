@@ -1,6 +1,7 @@
 export function fourSum(array: number[], target: number): number[][] {
   array.sort((a, b) => a - b);
   const hash = new Set<string>();
+
   for (let i = 0; i < array.length; i++) {
     if (i > 0 && i == array[i - 1]) {
       continue;
@@ -36,7 +37,7 @@ export function fourSum(array: number[], target: number): number[][] {
   return [...hash].map((string) => JSON.parse(string));
 }
 
-console.log('brute force');
+console.log('my solution');
 console.log(fourSum([1, 0, -1, 0, -2, 2], 0));
 console.log(fourSum([4, 3, 3, 4, 4, 2, 1, 2, 1, 1], 9));
 
