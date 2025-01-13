@@ -24,7 +24,7 @@ console.log(numberOfSubbarays([4, 2, 2, 6, 4], 6));
 
 console.log(numberOfSubbarays([5, 6, 7, 8, 9], 5));
 
-function numberOfSubbaraysBetter(array: number[], k): number {
+function numberOfSubbaraysBetter(array: number[], k: number): number {
   let count = 0;
 
   for (let i = 0; i < array.length; i++) {
