@@ -31,17 +31,21 @@ console.log(mergeTwoSortedArray([1, 4, 8, 10], [2, 3, 9]));
 console.log(mergeTwoSortedArray([1, 3, 5, 7], [0, 2, 6, 8, 9]));
 
 function mergeTwoSortedArrayOptimal(array1: number[], array2: number[]) {
+  if (array1.length === 0 || array2.length === 0) {
+    return;
+  }
+
   let end = array1.length - 1;
   let start = 0;
 
-  while (array1[end] > array2[start]) {
+  while (end >= 0 && start < array2.length && array1[end] > array2[start]) {
     [array1[end], array2[start]] = [array2[start], array1[end]];
     end--;
     start++;
   }
 
-  array1.sort();
-  array2.sort();
+  array1.sort((a, b) => a - b);
+  array2.sort((a, b) => a - b);
 
   console.log(array1);
   console.log(array2);
