@@ -4,7 +4,7 @@ function mergeTwoSortedArray(array1: number[], array2: number[]) {
   let i = 0;
   let j = 0;
 
-  while (i < array1.length || j < array2.length) {
+  while (i < array1.length && j < array2.length) {
     if (j >= array2.length || (i < array1.length && array1[i] < array2[j])) {
       array.push(array1[i]);
       i++;
@@ -29,3 +29,24 @@ function mergeTwoSortedArray(array1: number[], array2: number[]) {
 console.log('brute force');
 console.log(mergeTwoSortedArray([1, 4, 8, 10], [2, 3, 9]));
 console.log(mergeTwoSortedArray([1, 3, 5, 7], [0, 2, 6, 8, 9]));
+
+function mergeTwoSortedArrayOptimal(array1: number[], array2: number[]) {
+  let end = array1.length - 1;
+  let start = 0;
+
+  while (array1[end] > array2[start]) {
+    [array1[end], array2[start]] = [array2[start], array1[end]];
+    end--;
+    start++;
+  }
+
+  array1.sort();
+  array2.sort();
+
+  console.log(array1);
+  console.log(array2);
+}
+
+console.log('Optimally');
+console.log(mergeTwoSortedArrayOptimal([1, 4, 8, 10], [2, 3, 9]));
+console.log(mergeTwoSortedArrayOptimal([1, 3, 5, 7], [0, 2, 6, 8, 9]));
