@@ -18,3 +18,25 @@ function binarySearch(array: number[], target: number): boolean {
 
 console.log('brute force');
 console.log(binarySearch([3, 4, 6, 7, 9, 12, 16, 17], 6));
+
+function binarySearchRecursively(
+  array: number[],
+  target: number,
+  low: number = 0,
+  high: number = array.length - 1
+): boolean {
+  if (low > high) return false;
+
+  const current = Math.floor((low + high) / 2);
+  const mid = array[current];
+  if (target === mid) return true;
+
+  if (mid > target) {
+    return binarySearchRecursively(array, target, low, current - 1);
+  } else {
+    return binarySearchRecursively(array, target, current + 1, high);
+  }
+}
+
+console.log('brute force recursively');
+console.log(binarySearchRecursively([3, 4, 6, 7, 9, 12, 16, 17], 6));
