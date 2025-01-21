@@ -23,3 +23,31 @@ function lowerBounds(array: number[], x: number): number {
 console.log('brute force');
 console.log(lowerBounds([1, 2, 2, 3], 2));
 console.log(lowerBounds([3, 5, 8, 15, 19], 9));
+
+function lowerBoundsRecursively(
+  array: number[],
+  x: number,
+  low: number = 0,
+  high: number = array.length - 1,
+  smallest: number = array.length
+) {
+  const mid = Math.floor((low + high) / 2);
+  const current = array[mid];
+  if (low > high) {
+    return smallest;
+  }
+
+  if (current >= x) {
+    smallest = mid;
+    return smallest;
+  }
+
+  if (current >= x) {
+    return lowerBoundsRecursively(array, x, low, mid - 1, smallest);
+  } else {
+    return lowerBoundsRecursively(array, x, mid + 1, high, smallest);
+  }
+}
+console.log('recursive');
+console.log(lowerBoundsRecursively([1, 2, 2, 3], 2));
+console.log(lowerBoundsRecursively([3, 5, 8, 15, 19], 9));
