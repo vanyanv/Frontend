@@ -1,16 +1,16 @@
 function lowerBounds(array: number[], x: number): number {
   let start = 0;
   let end = array.length - 1;
-  let smallest = Infinity;
-  while (smallest > x) {
+  let smallest = array.length;
+  while (start <= end) {
     const mid = Math.floor((start + end) / 2);
     const current = array[mid];
 
-    if (current <= x) {
+    if (current >= x) {
       smallest = mid;
     }
 
-    if (current > x) {
+    if (current >= x) {
       end = mid - 1;
     } else {
       start = mid + 1;
