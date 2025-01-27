@@ -6,12 +6,11 @@ function lastOccurance(array: number[], target: number): number {
   while (low <= high) {
     const mid = Math.floor((low + high) / 2);
 
-    if (array[mid] <= target) {
-      if (array[mid] === target) answer = mid;
-
-      low = mid + 1;
-    } else {
+    if (array[mid] >= target) {
+      answer = mid;
       high = mid - 1;
+    } else {
+      low = mid + 1;
     }
   }
 
